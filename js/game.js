@@ -46,8 +46,14 @@ function addGameOverTitle() {
     const gameOverSubtitle = document.createElement('p');
     gameOverSubtitle.innerHTML = "Press Enter to restart";
 
+    const gameOverScore = document.createElement('p');
+    const scoreElement = document.getElementById('score');
+    const [, score] = scoreElement.innerHTML.split(":");
+    gameOverScore.innerHTML = `Your score: ${score}`;
+
     gameOverWrap.appendChild(gameOverTitle);
     gameOverWrap.appendChild(gameOverSubtitle);
+    gameOverWrap.appendChild(gameOverScore);
 
     mainContent.appendChild(gameOverWrap);
 }
@@ -63,12 +69,28 @@ function handleGameOver() {
     addGameOverTitle();
 }
 
-const loop = setInterval(() => {
+function increaseScore() {
+    const currentScoreElement = document.getElementById('score');
+    const [, score] = currentScoreElement.innerHTML.split(":");
+
+    const currentScore = parseInt(score);
+    currentScoreElement.innerHTML = `SCORE: ${currentScore+1}`;
+}
+
+const checkGameOverLoop = setInterval(() => {
     if(isGameOver()) {
         document.addEventListener('keydown', replay);
         handleGameOver();
-        clearInterval(loop);
+        clearInterval(checkGameOverLoop);
     }
 }, 15);
+
+const increaseScoreLoop = setInterval(() => {
+    if(!isGameOver()) {
+        increaseScore();
+    } else {
+        clearInterval(increaseScoreLoop);
+    }
+}, 50);
 
 document.addEventListener('keydown', jump);
