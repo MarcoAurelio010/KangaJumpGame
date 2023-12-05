@@ -64,6 +64,7 @@ main figure figcaption p:first-child {
 main figure figcaption p:last-child {
     font-size: 1.5rem;
     max-width: 50ch;
+    margin-top: 5rem;
 }
 
 main div:last-child {
