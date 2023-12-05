@@ -130,6 +130,7 @@
     width: 120px;
     position: absolute;
     bottom: 0;
+    z-index: 1;
 }
 
 .clouds {
