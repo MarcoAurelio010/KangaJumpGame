@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+@keyframes clouds-animation {
+    from {
+        right: -800px;
+
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes tumbleweed-animation {
+    from {
+        right: -60px;
+
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100dvw;
+    height: calc(100dvh - 20px);
+    overflow: hidden;
+    border-bottom: 20px solid #d98c27;
+    margin-bottom: 20px;
+    position: relative;
+    background: linear-gradient(#ffc559, #fadcc0);
+}
+
+main figure {
+    z-index: 1;
+}
+
+main figure figcaption {
+    margin-top: 5rem;
+    text-align: center;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+main div:last-child {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+main div:last-child > img:first-child {
+    position: absolute;
+    top: 5%;
+    right: 20%;
+    animation: clouds-animation 20s infinite linear;
+}

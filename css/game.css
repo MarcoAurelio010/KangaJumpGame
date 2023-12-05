@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+@keyframes cactus-animation {
+    from {
+        right: -100px;
+    }
+    to {
+        right: 100%;
+    }
+    
+}
+
+/*@keyframes miniCactus-animation {
+    from {
+        right: -250px;
+    }
+    to {
+        right: 100%;
+    }
+    
+}*/
+
+@keyframes  jump {
+
+    0% { 
+        bottom: 0;
+    } 
+
+    40% {
+        bottom: 240px;
+    }
+
+    50% {
+       bottom: 250px;
+    }
+
+    60% {
+        bottom: 200px;
+    }
+   
+    100% {
+        bottom: 0;
+    }
+
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -800px;
+
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes tumbleweed-animation {
+    from {
+        right: -60px;
+
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes bird-animation {
+    from {
+        right: -100px;
+
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.logo {
+    position: absolute;
+    width: 700px;
+    bottom: 400px;
+    right: 450px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: calc(100dvh - 20px);
+    border-bottom: 20px solid #d98c27;
+    margin: 0 auto 20px auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#ffc559, #fadcc0);
+}
+
+.tumbleweed {
+    position: absolute;
+    width: 45px; 
+    bottom: 0;
+    animation: tumbleweed-animation 3s infinite linear;
+}
+
+.bird {
+    position: absolute;
+    width: 150px; 
+    animation: bird-animation 3s infinite linear;
+    bottom: 350px;
+}
+
+.cactus {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    animation: cactus-animation 1.3s infinite linear;
+}
+
+/*.miniCactus {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    animation: miniCactus-animation 1.80s infinite linear;
+}*/
+
+.kangaroo {
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+}
+
+.clouds {
+    position: absolute;
+    width: 800px; 
+    animation: clouds-animation 20s infinite linear;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.gameOverWrap {
+    position: absolute;
+    font-family: 'Pixelify Sans', sans-serif;
+    left: 40%;
+    top: 45%;
+    text-align: center;
+}
+
+.gameOverWrap h2 {
+    font-size: 2.5rem;
+}
+
+.gameOverWrap p {
+    font-size: 1.85rem;
+}
