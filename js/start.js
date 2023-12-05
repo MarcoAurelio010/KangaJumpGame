@@ -1,5 +1,5 @@
 function startGame() {
-    location.replace('/pages/game.html');
+    window.location.href = '/pages/game.html';
 }
 
 document.addEventListener('keydown', startGame);
