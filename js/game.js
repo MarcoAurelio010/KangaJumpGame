@@ -16,9 +16,14 @@ function jump(e) {
 }
 
 function replay(e) {
-    if (e.key === "Enter") {
-        location.reload();
-        document.removeEventListener('keydown', replay);
+    switch (e.key) {
+        case "Enter":
+            location.reload();
+            document.removeEventListener('keydown', replay);
+            break;
+        case "Escape":
+            location.replace('../index.html');
+            break;
     }
 }
 
@@ -46,6 +51,9 @@ function addGameOverTitle() {
     const gameOverSubtitle = document.createElement('p');
     gameOverSubtitle.innerHTML = "Press Enter to restart";
 
+    const gameOverReturnMenu = document.createElement('p');
+    gameOverReturnMenu.innerHTML = "Press ESC to return Menu";
+
     const gameOverScore = document.createElement('p');
     const scoreElement = document.getElementById('score');
     const [, score] = scoreElement.innerHTML.split(":");
@@ -53,6 +61,7 @@ function addGameOverTitle() {
 
     gameOverWrap.appendChild(gameOverTitle);
     gameOverWrap.appendChild(gameOverSubtitle);
+    gameOverWrap.appendChild(gameOverReturnMenu);
     gameOverWrap.appendChild(gameOverScore);
 
     mainContent.appendChild(gameOverWrap);

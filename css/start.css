@@ -46,12 +46,24 @@ main figure {
     z-index: 1;
 }
 
+main figure img {
+    width: 100%;
+}
+
 main figure figcaption {
     margin-top: 5rem;
     text-align: center;
     font-family: 'Pixelify Sans', sans-serif;
     font-weight: bold;
+}
+
+main figure figcaption p:first-child {
     font-size: 2rem;
+}
+
+main figure figcaption p:last-child {
+    font-size: 1.5rem;
+    max-width: 50ch;
 }
 
 main div:last-child {
